@@ -1,0 +1,4 @@
+outs:
+- md5: 3d1c36f63661a55ab430d4802a4e01da
+  size: 19749
+  path: campus.csv
