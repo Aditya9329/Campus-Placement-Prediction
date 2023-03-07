@@ -1,0 +1,4 @@
+outs:
+- md5: a97238029901d5a164a9880e13218d9f
+  size: 20500
+  path: campusplacement.csv
