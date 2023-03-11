@@ -4,18 +4,19 @@ base:
   target_col: status
 
 data_source:
-  s3_source: data_given/campus.csv
+  s3_source: data_given/campusplacement.csv
   
 
 load_data:
-  raw_dataset_csv: data/raw/campus.csv
+  raw_dataset_csv: data/raw/campusplacement.csv
 
 transformed_data:
   transformed_data_csv: data/transformed/campus_transformed.csv
 
 split_data:
-  train_path: data/processed/train_campus.csv
-  test_path: data/processed/test_campus.csv
+  train_path: data/processed/train_campusplacement.csv
+  test_path: data/processed/test_campusplacement.csv
+  test_size: 0.2
 
 estimators:
   LogisticRegression:

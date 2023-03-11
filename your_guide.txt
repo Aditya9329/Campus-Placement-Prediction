@@ -1,0 +1,5 @@
+data ingestion - 1
+    "In data ingestion we also divide the data into train and test data"
+data transformation - 2
+model training - 3
+

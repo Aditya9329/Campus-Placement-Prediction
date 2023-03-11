@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/campusplacement.csv
+      md5: a97238029901d5a164a9880e13218d9f
+      size: 20500
+    - path: src/get_data.py
+      md5: 1b317938d5a65299dc72911c59a95cfa
+      size: 719
+    - path: src/load_data.py
+      md5: dda98de0ad45d7d8f5aac94ed23a83b2
+      size: 756
+    outs:
+    - path: data/raw/campusplacement.csv
+      md5: e045899d1ad4053c4a9587585883b412
+      size: 20510
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/campusplacement.csv
+      md5: e045899d1ad4053c4a9587585883b412
+      size: 20510
+    - path: src/split_data.py
+      md5: 01834bd913f42b9943e4026ad2fd41dc
+      size: 1442
+    outs:
+    - path: data/processed/test_campusplacement.csv
+      md5: f96002c282cb4fbdfd5f5c609262260e
+      size: 3733
+    - path: data/processed/train_campusplacement.csv
+      md5: 453f25481018248f24071fb1f59b2bb1
+      size: 14723
