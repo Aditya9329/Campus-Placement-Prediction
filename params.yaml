@@ -10,8 +10,7 @@ data_source:
 load_data:
   raw_dataset_csv: data/raw/campusplacement.csv
 
-transformed_data:
-  transformed_data_csv: data/transformed/campus_transformed.csv
+
 
 split_data:
   train_path: data/processed/train_campusplacement.csv
@@ -19,13 +18,20 @@ split_data:
   test_size: 0.2
 
 estimators:
+  RandomForestClassifier-:
+    params:
+      max_depth: 10
+      max_leaf_nodes: 2
   LogisticRegression:
-    n_jobs: 2
+    params:
+      n_jobs: 2
   Knn:
-    n_neighbors: 4
-    algorithm: kd_tree
-  DecisionTree:
-    max_depth: 10
-    max_leaf_nodes: 2
+    params:
+      n_neighbors: 4
+      algorithm: kd_tree
+  DecisionTreeClassifier:
+    params:
+      max_depth: 10
+      max_leaf_nodes: 2
 
 model_dir: saved_models

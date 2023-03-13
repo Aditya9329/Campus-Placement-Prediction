@@ -3,6 +3,7 @@ stages:
     cmd: python src/load_data.py --config=params.yaml
     deps:
     - src/get_data.py
+    - src/logger.py
     - src/load_data.py
     - data_given/campusplacement.csv
     outs:
@@ -10,9 +11,24 @@ stages:
   split_data:
    cmd: python src/split_data.py --config=params.yaml
    deps:
+   - src/logger.py
    - src/split_data.py
    - data/raw/campusplacement.csv
    outs: 
    - data/processed/train_campusplacement.csv
    - data/processed/test_campusplacement.csv
-   
+  
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - data/processed/train_campusplacement.csv
+    - data/processed/test_campusplacement.csv
+    - src/train_and_evaluate.py
+    params:
+    - estimators.DecisionTreeClassifier.params.max_depth
+    - estimators.DecisionTreeClassifier.params.max_leaf_nodes
+
+    outs:
+    - saved_models/model.joblib
+
+    

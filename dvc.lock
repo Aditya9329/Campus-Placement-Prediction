@@ -10,8 +10,11 @@ stages:
       md5: 1b317938d5a65299dc72911c59a95cfa
       size: 719
     - path: src/load_data.py
-      md5: dda98de0ad45d7d8f5aac94ed23a83b2
-      size: 756
+      md5: 38ddb8d697e8a29daacd579edf7da83b
+      size: 1029
+    - path: src/logger.py
+      md5: 360e5390244c2d1430cf4eac89e9207d
+      size: 504
     outs:
     - path: data/raw/campusplacement.csv
       md5: e045899d1ad4053c4a9587585883b412
@@ -22,13 +25,36 @@ stages:
     - path: data/raw/campusplacement.csv
       md5: e045899d1ad4053c4a9587585883b412
       size: 20510
+    - path: src/logger.py
+      md5: 360e5390244c2d1430cf4eac89e9207d
+      size: 504
     - path: src/split_data.py
-      md5: 01834bd913f42b9943e4026ad2fd41dc
-      size: 1442
+      md5: 293c57728d1734a36ce83c4239a248c4
+      size: 2050
     outs:
     - path: data/processed/test_campusplacement.csv
-      md5: f96002c282cb4fbdfd5f5c609262260e
-      size: 3733
+      md5: 11ce53cb14a84f0c1218adeacccb3f39
+      size: 3755
     - path: data/processed/train_campusplacement.csv
-      md5: 453f25481018248f24071fb1f59b2bb1
-      size: 14723
+      md5: 31d0ed36a100f4d726dcc64e82f2e274
+      size: 14701
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_campusplacement.csv
+      md5: 11ce53cb14a84f0c1218adeacccb3f39
+      size: 3755
+    - path: data/processed/train_campusplacement.csv
+      md5: 31d0ed36a100f4d726dcc64e82f2e274
+      size: 14701
+    - path: src/train_and_evaluate.py
+      md5: 4b0f83dea63cc70ef9cfa99735073c7b
+      size: 2245
+    params:
+      params.yaml:
+        estimators.DecisionTreeClassifier.params.max_depth: 10
+        estimators.DecisionTreeClassifier.params.max_leaf_nodes: 2
+    outs:
+    - path: saved_models/model.joblib
+      md5: f846b2d852268ca7aa72d3d243399b37
+      size: 1657

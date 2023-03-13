@@ -1,0 +1,9 @@
+[2023-03-11 08:50:46,702] 24 root- 5(levelname)s - read the configuration path
+[2023-03-11 08:50:46,703] 26 root- 5(levelname)s - read the raw_data_path successfully
+[2023-03-11 08:50:46,703] 28 root- 5(levelname)s - read the training data path successfully
+[2023-03-11 08:50:46,704] 30 root- 5(levelname)s - read the testing data path successfully
+[2023-03-11 08:50:46,752] 35 root- 5(levelname)s - data reading done from raw folder
+[2023-03-11 08:50:47,071] 37 root- 5(levelname)s - dropping unecessary columns
+[2023-03-11 08:50:47,092] 44 root- 5(levelname)s - train data and test data get separated
+[2023-03-11 08:50:47,105] 47 root- 5(levelname)s - training data get stored into the processed folder
+[2023-03-11 08:50:47,111] 49 root- 5(levelname)s - testing data get stored into the processed folder
