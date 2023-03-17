@@ -8,6 +8,7 @@ from sklearn.tree import DecisionTreeClassifier
 from data_transformation import encoder_function
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import r2_score
 
 
 def model_training_and_evaluation(config_path):
@@ -21,6 +22,7 @@ def model_training_and_evaluation(config_path):
         target = [config["base"]["target_col"]]
 
         train = pd.read_csv(train_data_path,sep=",")
+        logging
         print("train:",train.shape)
         test = pd.read_csv(test_data_path,sep=",")
         print("test:",test.shape)
@@ -51,6 +53,7 @@ def model_training_and_evaluation(config_path):
         )
         dtree.fit(for_training,y_train)
         os.makedirs(model_dir, exist_ok=True)
+        
         model_path = os.path.join(model_dir, "model.joblib")
         joblib.dump(dtree, model_path)
 
