@@ -33,7 +33,7 @@ def split_data(config_path):
 
         df = pd.read_csv(raw_data_path,sep=",")
         logging.info("data reading done from raw folder")
-        df.drop(columns=['sl_no','salary'],inplace=True)
+        df.drop(columns=['Unnamed: 0','sl_no','salary'],inplace=True)
         logging.info("dropping unecessary columns")
 
         train,test = train_test_split(df,

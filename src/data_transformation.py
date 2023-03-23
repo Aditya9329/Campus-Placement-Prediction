@@ -2,6 +2,7 @@ import pickle
 from logger import logging
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
 
 
 
@@ -25,3 +26,14 @@ def encoder_function(x_train,x_test):
     # print(x_train_transformed)
     # print(x_test_transformed)
     return x_train_transformed, x_test_transformed
+
+
+
+
+
+def encode_target(y_train,y_test):
+    le = LabelEncoder()
+    le.fit(y_train)
+    y_train_transformed = le.transform(y_train)
+    y_test_transformed  = le.transform(y_test)
+    return y_train_transformed,y_test_transformed

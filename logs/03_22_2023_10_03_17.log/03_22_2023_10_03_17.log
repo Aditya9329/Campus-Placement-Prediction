@@ -1,0 +1,6 @@
+[2023-03-22 10:03:21,564] 13 root- 5(levelname)s - data transformation object has created
+[2023-03-22 10:03:21,605] 20 root- 5(levelname)s - fit and transform the x_train data and stored into the variable called x_train_transformed
+[2023-03-22 10:03:21,622] 24 root- 5(levelname)s - transformed the x_test data and stored into the x_test_transformed variable
+[2023-03-22 10:03:21,622] 46 root- 5(levelname)s - Training and Testing data is transformed
+[2023-03-22 10:03:21,643] 63 root- 5(levelname)s - Model training completed
+[2023-03-22 10:03:21,677] 91 root- 5(levelname)s - Model has dumped

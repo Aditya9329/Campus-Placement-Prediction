@@ -3,3 +3,10 @@ data ingestion - 1
 data transformation - 2
 model training - 3
 
+https://github.com/datarevenue-berlin/OpenMLOps/blob/master/tutorials/basic-usage-of-jupyter-mlflow-and-prefect.md
+
+
+
+placed -1
+not placed -0
+

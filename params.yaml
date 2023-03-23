@@ -18,20 +18,32 @@ split_data:
   test_size: 0.2
 
 estimators:
-  RandomForestClassifier-:
-    params:
-      max_depth: 10
-      max_leaf_nodes: 2
-  LogisticRegression:
-    params:
-      n_jobs: 2
-  Knn:
-    params:
-      n_neighbors: 4
-      algorithm: kd_tree
+  # RandomForestClassifier-:
+  #   params:
+  #     max_depth: 10
+  #     max_leaf_nodes: 2
+  # LogisticRegression:
+  #   params:
+  #     n_jobs: 2
+  # Knn:
+  #   params:
+  #     n_neighbors: 4
+  #     algorithm: kd_tree
   DecisionTreeClassifier:
     params:
       max_depth: 10
       max_leaf_nodes: 2
 
+    metrics:
+      - reports/scores.json:
+          cache: false
+      - reports/params.json:
+          cache: false
+
+
 model_dir: saved_models
+
+
+reports:
+  params: reports/params.json
+  scores: reports/scores.json
