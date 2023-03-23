@@ -48,8 +48,8 @@ stages:
       md5: c4bed4d22ae49229a9b8b84e396a35ec
       size: 14103
     - path: src/train_and_evaluate.py
-      md5: 9007b2638d80e026596188ccdfc33c5e
-      size: 3603
+      md5: 91b4cd7d1be499ece47300fed98c570a
+      size: 3613
     params:
       params.yaml:
         estimators.DecisionTreeClassifier.params.max_depth: 10

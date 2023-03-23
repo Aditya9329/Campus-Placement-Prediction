@@ -1,4 +1,5 @@
 import pickle
+import pickle
 from logger import logging
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
@@ -13,7 +14,8 @@ def encoder_function(x_train,x_test):
 
     logging.info("data transformation object has created")
 
-
+    clmtrfr = transformer.fit(x_train)
+    pickle.dump(clmtrfr,open("test1.pickle","wb"))
 
 
     
